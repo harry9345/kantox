@@ -22,7 +22,15 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    indent: [
+      'error',
+      2,
+      {
+        ignoredNodes: ['TemplateLiteral'],
+      },
+    ],
+  },
   overrides: [
     // node files
     {

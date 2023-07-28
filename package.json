@@ -25,7 +25,8 @@
     "test:ember": "ember test"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.21.3",
+    "@babel/eslint-parser": "^7.22.9",
+    "@babel/eslint-plugin": "^7.22.5",
     "@babel/plugin-proposal-decorators": "^7.21.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.0.1",
@@ -77,8 +78,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": true,
-    "semi": false,
+    "semi": true,
     "tabWidth": 2,
     "useTabs": false
   },

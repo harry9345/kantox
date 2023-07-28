@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
+/* eslint-env node */
 module.exports = {
   content: ['./app/**/*.{gjs,gts,hbs,html,js,ts}'],
   theme: {
@@ -15,27 +15,12 @@ module.exports = {
         violet50: '#f5f3ff',
         violet700: '#6d28d9',
       },
-      fontSize: {
-        'md': ['0.5rem', '1.2'],
-        'lg': ['1rem', '1.2'],
-        'xl': ['1.5rem', '1.2'],
-        '1xl': ['2rem', '1.2'],
-        '2xl': ['2.5rem', '1.2'],
-        '3xl': ['3rem', '1.2'],
-        '4xl': ['3.5rem', '1.2'],
-      },
-      borderRadius: {
-        'lg': '1rem',
-        'xl': '2rem',
-        '2xl': '3rem',
-      },
     },
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
     },
     container: {
       center: true,
