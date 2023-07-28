@@ -22,7 +22,10 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'template-curly-spacing': 'off',
+    indent: 'off',
+  },
   overrides: [
     // node files
     {
