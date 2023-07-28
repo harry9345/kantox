@@ -77,8 +77,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": true,
-    "semi": false,
+    "semi": true,
     "tabWidth": 2,
     "useTabs": false
   },
