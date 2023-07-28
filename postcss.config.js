@@ -1,5 +1,7 @@
-export const plugins = {
-  'tailwindcss/nesting': {},
-  tailwindcss: {},
-  autoprefixer: {},
+/* eslint-env node */
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 };
