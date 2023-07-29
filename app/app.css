@@ -12,16 +12,32 @@
     @apply w-36;
   }
 
+  .link-to {
+    @apply cursor-pointer body-medium text-gray800;
+  }
+
+  .bread-crumbs {
+    @apply py-12;
+  }
+
+  .title-wrapper {
+    @apply grid gap-2;
+  }
+
   .button {
-    @apply w-full px-5 py-3 border-2 rounded-full;
+    @apply inline-flex items-start justify-end gap-8 p-2 rounded-lg shadow-sm;
 
     &:hover {
       @apply hover:translate-y-[-2px];
     }
   }
 
-  .rounde-card {
-    @apply flex flex-col items-center justify-center flex-1 rounded-corners;
+  .product-wrapper {
+    @apply flex flex-col items-center justify-center flex-1 rounded-lg;
+  }
+
+  .container-wrapper {
+    @apply px-36;
   }
 }
 
@@ -46,7 +62,7 @@
     @apply text-xl font-normal leading-7;
   }
 
-  .body-meduim {
+  .body-medium {
     @apply text-base font-normal leading-6;
   }
 

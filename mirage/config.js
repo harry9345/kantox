@@ -13,7 +13,7 @@ export default function () {
             name: "Green Tea",
             price: 3.11,
             code: "GR1",
-            src: "/assets/green-tee.png",
+            src: "/assets/green-tea.png",
           },
         },
         {
