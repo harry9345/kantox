@@ -1,4 +1,6 @@
-{{page-title "Products"}}
+{{page-title 'Products'}}
 {{#each this.model as |product|}}
-  <Product @product={{product}} />
+  <LinkTo @route="item" @model={{product.id}}>
+    <Product @product={{product}} />
+  </LinkTo>
 {{/each}}

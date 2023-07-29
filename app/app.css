@@ -39,6 +39,14 @@
   .container-wrapper {
     @apply px-36;
   }
+
+  .container-summary {
+    @apply flex flex-row items-center justify-between;
+  }
+
+  .total-summary {
+    @apply flex-shrink-0 w-[35%] border rounded-md shadow-sm border-gray100;
+  }
 }
 
 @layer utilities {
