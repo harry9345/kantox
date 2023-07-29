@@ -1,0 +1,12 @@
+<div class="p-2 rounded-lg shadow-md bg-gray50">
+  {{#if this.isSvgLoaded}}
+    <img
+      src={{concat "/assets/" @name ".svg"}}
+      alt={{concat @name "Icon"}}
+    />
+  {{else}}
+    <div>
+      Loading SVG...
+    </div>
+  {{/if}}
+</div>

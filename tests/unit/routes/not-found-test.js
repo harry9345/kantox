@@ -1,11 +1,11 @@
 import { module, test } from "qunit";
 import { setupTest } from "kshop-app/tests/helpers";
 
-module("Unit | Route | products", function (hooks) {
+module("Unit | Route | not-found", function (hooks) {
   setupTest(hooks);
 
   test("it exists", function (assert) {
-    let route = this.owner.lookup("route:products");
+    let route = this.owner.lookup("route:not-found");
     assert.ok(route);
   });
 });

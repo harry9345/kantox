@@ -77,7 +77,7 @@
     "webpack": "^5.78.0"
   },
   "prettier": {
-    "singleQuote": true,
+    "singleQuote": false,
     "semi": true,
     "tabWidth": 2,
     "useTabs": false
