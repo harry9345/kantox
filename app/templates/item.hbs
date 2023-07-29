@@ -1,1 +1,8 @@
-{{page-title 'Item'}}<Product @product={{this.model}} />{{outlet}}
+<GeneralContainer>
+  <BreadCrumbs
+    @toRoute="products"
+    @pageTitle="Groceries"
+    @pageSubtitle="Back to product!"
+  />
+  <Product @product={{this.model}} />
+</GeneralContainer>

@@ -1,0 +1,23 @@
+<div class="flex flex-row items-stretch items-center justify-between p-4">
+  <p class="grid gap-4 text-gray800">
+    <span class="title-medium">
+      {{@product.name}}
+    </span>
+    <span class="body-large">
+      {{@product.price}}
+    </span>
+  </p>
+  {{!-- <p class="my-2">
+      In Cart:
+      {{this.quantity}}
+    </p> --}}
+  <div class='self-end'>
+    <GeneralButton
+      @bgColor="bg-violet50"
+      @color="text-violet700"
+      @fontWeight="font-bold"
+    >
+      {{yield}}
+    </GeneralButton>
+  </div>
+</div>

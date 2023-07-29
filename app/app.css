@@ -32,8 +32,8 @@
     }
   }
 
-  .product-wrapper {
-    @apply flex flex-col items-center justify-center flex-1 rounded-lg;
+  .product-image {
+    @apply rounded-t-lg;
   }
 
   .container-wrapper {

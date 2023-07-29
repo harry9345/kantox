@@ -1,6 +1,14 @@
-{{page-title 'Products'}}
-{{#each this.model as |product|}}
-  <LinkTo @route="item" @model={{product.id}}>
-    <Product @product={{product}} />
-  </LinkTo>
-{{/each}}
+<GeneralContainer>
+  <BreadCrumbs
+    @toRoute="products"
+    @pageTitle="Groceries"
+    @pageSubtitle="Special FX offers only the finest organic produce."
+  />
+  <div class="flex flex-row gap-14">
+    {{#each this.model as |product|}}
+      <LinkTo @route="item" @model={{product.id}}>
+        <Product @product={{product}} />
+      </LinkTo>
+    {{/each}}
+  </div>
+</GeneralContainer>

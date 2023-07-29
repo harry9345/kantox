@@ -1,0 +1,15 @@
+<button
+  type="button"
+  class={{concat
+    'p-2 '
+    @fontWeight
+    ' '
+    @color
+    ' '
+    @bgColor
+    ' rounded-lg'
+  }}
+  {{!-- {{on 'click' this.addToCart}} --}}
+>
+  {{yield}}
+</button>

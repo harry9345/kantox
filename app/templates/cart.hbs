@@ -1,23 +1,9 @@
-<div class="container-wrapper">
-  <div class="bread-crumbs">
-    <LinkTo
-      @route="products"
-      class="inline-flex items-center cursor-pointer link-to"
-    >
-      <SvgIcon @name="arrow-left" @class="w-6 h-6" />
-      <span class="p-2 body-medium text-gray800">
-        Continue shopping
-      </span>
-    </LinkTo>
-  </div>
-  <div class="my-32 mt-4 title-wrapper">
-    <h1 class="title-large text-gray800">
-      Shopping Cart
-    </h1>
-    <p class="mt-2 body-large">
-      You have 4 items in your cart.
-    </p>
-  </div>
+<GeneralContainer>
+  <BreadCrumbs
+    @toRoute="products"
+    @pageTitle="Shopping Cart"
+    @pageSubtitle="You have 4 items in your cart."
+  />
   <div class="container-summary">
     <ul class="item-summary">
       <li>
@@ -47,7 +33,7 @@
               subtotal
             </span>
             <span class="font-bold">
-              100
+              {{!-- {{this.subtotal}} --}}
             </span>
           </div>
           <div class="flex justify-between gap-2">
@@ -55,7 +41,7 @@
               shipping cost
             </p>
             <span class="font-bold">
-              100
+              {{!-- {{this.total}} --}}
             </span>
           </div>
           <div class="flex justify-between gap-2">
@@ -63,7 +49,7 @@
               discount
             </p>
             <span class="font-bold">
-              100
+              {{!-- {{this.tax}} --}}
             </span>
           </div>
         </div>
@@ -77,12 +63,10 @@
         </span>
       </div>
       <div class="flex justify-end p-8">
-        <button
-          class="font-bold text-white button bg-violet700"
-        >
+        <button class="font-bold text-white button bg-violet700" type="button">
           Go to Checkout
         </button>
       </div>
     </div>
   </div>
-</div>
+</GeneralContainer>

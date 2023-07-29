@@ -4,4 +4,7 @@ export default class ProductModel extends Model {
   @attr("string") name;
   @attr("number") price;
   @attr("string") code;
+  @attr("string") src;
+  @attr("string") inCart;
+  @attr("string") discount;
 }
