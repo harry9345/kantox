@@ -1,18 +1,14 @@
-{{page-title "KshopApp"}}
-
-<nav class="bg-gray-500">
-  <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="relative flex items-center justify-between h-16">
-      <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <LinkTo @route="index" class="px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white rounded-md">Home</LinkTo>
-            <LinkTo @route="products" class="px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white rounded-md">Products</LinkTo>
-          </div>
-        </div>
-      </div>
-    </div>
+{{page-title 'KshopApp'}}
+<nav class="nav">
+  <div class="">
+    <LinkTo @route="index" class="cursor-pointer">
+      <img src={{'/assets/specialfx.png'}} alt="specialfx logo" class="logo" />
+    </LinkTo>
+  </div>
+  <div class="">
+    <LinkTo @route="cart" class="cursor-pointer">
+      <SvgIcon @name="cart" @width="24" @height="24" />
+    </LinkTo>
   </div>
 </nav>
-
 {{outlet}}

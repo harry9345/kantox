@@ -4,6 +4,14 @@
 @tailwind utilities;
 
 @layer components {
+  .nav {
+    @apply flex items-center justify-between px-12 py-4 bg-white border-b border-solid border-gray200;
+  }
+
+  .logo {
+    @apply w-36;
+  }
+
   .button {
     @apply w-full px-5 py-3 border-2 rounded-full;
 
