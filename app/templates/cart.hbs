@@ -3,19 +3,16 @@
     @toRoute="products"
     @linkTitle="Continue shopping"
     @pageTitle="Shopping Cart"
-    @pageSubtitle="You have 4 items in your cart."
+    @pageSubtitle="You have {{this.cart.listItem.length}} items in your cart."
   />
   <div class="container-summary">
     <ul class="item-summary">
-      <li>
-        item1
-      </li>
-      <li>
-        item1
-      </li>
-      <li>
-        item1
-      </li>
+      {{#each this.cart.listItem as |item|}}
+        {{! need to update the li here }}
+        <li>
+          <Product @product={{item}} @isOnCart={{true}} />
+        </li>
+      {{/each}}
     </ul>
     <div class="total-summary">
       <div class="px-8 py-4 bg-gray100">
@@ -34,7 +31,7 @@
               subtotal
             </span>
             <span class="font-bold">
-              {{!-- {{currency this.subtotal}} --}}
+              {{currency this.subtotal}}
             </span>
           </div>
           <div class="flex justify-between gap-2">

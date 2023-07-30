@@ -6,7 +6,18 @@
   </div>
   <div class="p-2 rounded-lg shadow-md bg-gray50">
     <LinkTo @route="cart" class="cursor-pointer">
-      <SvgIcon @name="cart" @width="24" @height="24" />
+      {{#if this.cart.listItem.length}}
+        <SvgIcon
+          @name="cart-violet"
+          @class="flex items-center w-auto h-6 gap-2 cursor-pointer text-violet700"
+          @quantity={{this.itemsCount}}
+        />
+      {{else}}
+        <SvgIcon
+          @name="cart"
+          @class="flex items-center w-auto h-6 cursor-pointer"
+        />
+      {{/if}}
     </LinkTo>
   </div>
 </nav>

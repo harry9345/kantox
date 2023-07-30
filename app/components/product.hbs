@@ -1,9 +1,9 @@
-<div class="border rounded-lg">
-  <Product::Image @src={{@product}} @isOnProduct={{@isOnProduct}}/>
-  <Product::Details @product={{@product}}>
-    Add to cart
-  </Product::Details>
+<div class="{{if @isOnCart 'cart-wrapper' 'product-wrapper'}}">
+  <Product::Image @src={{@product}} @isOnCart={{@isOnCart}} />
+  <Product::Details
+    @product={{@product}}
+    @addToCart={{this.addToCart}}
+    @removeFromCart={{this.removeFromCart}}
+    @isOnCart={{@isOnCart}}
+  />
 </div>
-
-<h1>{{this.quantity}}</h1>
-<button type="button" {{on 'click' this.addToCart}}>add</button>

@@ -1,3 +1,8 @@
 <div class={{@class}}>
   <img src={{concat '/assets/' @name '.svg'}} alt={{concat @name 'Icon'}} />
+  {{#if @quantity}}
+    <span class="px-2 bg-white rounded-full title-small text-bold">
+      {{@quantity}}
+    </span>
+  {{/if}}
 </div>

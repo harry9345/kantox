@@ -15,6 +15,7 @@ export default function () {
             code: "GR1",
             src: "/assets/green-tea.png",
             discount: "2 for 1",
+            quantity: 0
           },
         },
         {
@@ -26,6 +27,7 @@ export default function () {
             code: "SR1",
             src: "/assets/strawberries.png",
             discount: "3 for £13.50",
+            quantity: 0
           },
         },
         {
@@ -37,6 +39,7 @@ export default function () {
             code: "CF1",
             src: "/assets/coffee.png",
             discount: "Multi-buy Discount",
+            quantity: 0
           },
         },
       ],
