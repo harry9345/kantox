@@ -1,6 +1,9 @@
 <div class="border rounded-lg">
-  <Product::Image @src={{@product}} />
+  <Product::Image @src={{@product}} @isOnProduct={{@isOnProduct}}/>
   <Product::Details @product={{@product}}>
     Add to cart
   </Product::Details>
 </div>
+
+<h1>{{this.quantity}}</h1>
+<button type="button" {{on 'click' this.addToCart}}>add</button>

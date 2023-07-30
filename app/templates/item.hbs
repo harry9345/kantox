@@ -1,8 +1,9 @@
 <GeneralContainer>
   <BreadCrumbs
     @toRoute="products"
+    @linkTitle="Products"
     @pageTitle="Groceries"
     @pageSubtitle="Back to product!"
   />
-  <Product @product={{this.model}} />
+  <Product @product={{this.model}}  @isOnProduct={{true}}/>
 </GeneralContainer>

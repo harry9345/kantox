@@ -47,6 +47,10 @@
   .total-summary {
     @apply flex-shrink-0 w-[35%] border rounded-md shadow-sm border-gray100;
   }
+
+  .active-bread-crumbs {
+    @apply hover:font-bold hover:text-violet700 active:text-violet700 hover:border-b hover:border-violet700;
+  }
 }
 
 @layer utilities {
