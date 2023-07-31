@@ -39,6 +39,5 @@ module.exports = {
       padding: "1rem",
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),],
+  plugins: [require("@tailwindcss/typography")],
 };
