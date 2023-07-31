@@ -3,9 +3,6 @@
 module.exports = {
   content: ["./app/**/*.{gjs,gts,hbs,html,js,ts}"],
   theme: {
-    fontFamily: {
-      inter: ["Inter", "sans-serif"],
-    },
     extend: {
       colors: {
         white: "#FFFFFF",
@@ -28,6 +25,9 @@ module.exports = {
         "4xl": ["2.25rem", "1.2"],
       },
     },
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
     screens: {
       sm: "640px",
       md: "850px",
@@ -39,5 +39,6 @@ module.exports = {
       padding: "1rem",
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),],
 };

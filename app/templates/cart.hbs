@@ -3,7 +3,11 @@
     @toRoute="products"
     @linkTitle="Continue shopping"
     @pageTitle="Shopping Cart"
-    @pageSubtitle="You have {{this.totalQuantity}} items in your cart."
+    @pageSubtitle={{if
+      (gt this.totalQuantity 0)
+      (concat 'You have ' this.totalQuantity ' items in your cart.')
+      'Please add item to your cart'
+    }}
   />
   <div class="container-summary">
     <ul class="item-summary">
@@ -23,7 +27,7 @@
         <div {{on 'click' this.toggleDetails}}>
           <SvgIcon
             @name="{{if this.isDetailsVisible 'arrow-down' 'arrow-right'}}"
-            @class="flex items-start w-6 h-auto cursor-pointer"
+            @class="flex items-start w-6 h-auto cursor-pointer mr-4 {{if this.isDetailsVisible 'mt-2'}}"
           />
         </div>
         <div class="grid w-full -mt-1 gap-y-4 body-medium text-gray800">
