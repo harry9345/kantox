@@ -7,20 +7,8 @@ module("Integration | Component | bread-crumbs", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`<BreadCrumbs @pageTitle="Groceries"/>`);
 
-    await render(hbs`<BreadCrumbs />`);
-
-    assert.dom(this.element).hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <BreadCrumbs>
-        template block text
-      </BreadCrumbs>
-    `);
-
-    assert.dom(this.element).hasText("template block text");
+    assert.dom('[data-test-bread-crumbs-title]').hasText("Groceries");
   });
 });

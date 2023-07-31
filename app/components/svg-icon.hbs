@@ -1,5 +1,9 @@
 <div class={{@class}}>
-  <img src={{concat '/assets/' @name '.svg'}} alt={{concat @name 'Icon'}} />
+  <img
+    src={{concat '/assets/' @name '.svg'}}
+    alt={{concat @name 'Icon'}}
+    data-test-img
+  />
   {{#if @quantity}}
     <span class="px-2 bg-white rounded-full title-small text-bold">
       {{@quantity}}
