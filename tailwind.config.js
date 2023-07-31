@@ -3,6 +3,9 @@
 module.exports = {
   content: ["./app/**/*.{gjs,gts,hbs,html,js,ts}"],
   theme: {
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+    },
     extend: {
       colors: {
         white: "#FFFFFF",
@@ -15,10 +18,19 @@ module.exports = {
         violet50: "#f5f3ff",
         violet700: "#6d28d9",
       },
+      fontSize: {
+        md: ["0.5rem", "1.2"],
+        lg: ["1rem", "1.2"],
+        xl: ["1.25rem", "1.2"],
+        "1xl": ["1.5rem", "1.2"],
+        "2xl": ["1.75rem", "1.2"],
+        "3xl": ["2rem", "1.2"],
+        "4xl": ["2.25rem", "1.2"],
+      },
     },
     screens: {
       sm: "640px",
-      md: "768px",
+      md: "850px",
       lg: "1024px",
       xl: "1280px",
     },

@@ -1,0 +1,49 @@
+<div class="{{if @isOnCart 'cart-details' 'product-details'}}">
+  <p class="{{if @isOnCart 'cart-content' 'product-content'}}">
+    <span class="title-medium">
+      {{@product.name}}
+    </span>
+    <span class="body-large">
+      {{currency @product.price}}
+    </span>
+  </p>
+  {{#if @isOnCart}}
+    <div class="mt-2 mb-10">
+      <button
+        type="button"
+        class="font-normal rounded-lg button bg-teal100 text-teal900"
+      >
+        {{@product.discount}}
+      </button>
+    </div>
+  {{/if}}
+  <div class="self-end">
+    {{#if (gte @product.quantity 1)}}
+      <div class="font-bold button bg-violet50 text-violet700">
+        <span {{on 'click' (fn @removeFromCart @product)}}>
+          <SvgIcon
+            @name="bin-icon"
+            @class="flex items-center w-auto h-6 gap-2 cursor-pointer text-violet700"
+          />
+        </span>
+        <span>
+          {{@product.quantity}}
+        </span>
+        <span {{on 'click' (fn @addToCart @product)}}>
+          <SvgIcon
+            @name="plus-icon"
+            @class="flex items-center w-auto h-6 gap-2 cursor-pointer text-violet700"
+          />
+        </span>
+      </div>
+    {{else}}
+      <button
+        type="button"
+        class="font-bold rounded-lg button bg-violet50 text-violet700"
+        {{on 'click' (fn @addToCart @product)}}
+      >
+        Add to cart
+      </button>
+    {{/if}}
+  </div>
+</div>

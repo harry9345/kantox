@@ -12,16 +12,76 @@
     @apply w-36;
   }
 
+  .link-to {
+    @apply cursor-pointer body-medium text-gray800;
+  }
+
+  .bread-crumbs {
+    @apply py-12;
+  }
+
+  .title-wrapper {
+    @apply grid gap-2;
+  }
+
   .button {
-    @apply w-full px-5 py-3 border-2 rounded-full;
+    @apply inline-flex items-start justify-end gap-8 p-2 rounded-lg shadow-sm;
 
     &:hover {
       @apply hover:translate-y-[-2px];
     }
   }
 
-  .rounde-card {
-    @apply flex flex-col items-center justify-center flex-1 rounded-corners;
+  .container-wrapper {
+    @apply px-10 sm:px-36;
+  }
+
+  .container-summary {
+    @apply flex flex-col items-center gap-12 lg:flex-row;
+  }
+
+  .item-summary {
+    @apply grid items-center self-start w-full gap-6;
+  }
+
+  .total-summary {
+    @apply flex-shrink-0 w-full lg:w-[35%] border rounded-md shadow-sm border-gray100 self-start;
+  }
+
+  .active-bread-crumbs {
+    @apply hover:font-bold hover:text-violet700 active:text-violet700 hover:border-b hover:border-violet700;
+  }
+
+  .product-wrapper {
+    @apply border rounded-lg shadow-sm;
+  }
+
+  .product-image {
+    @apply w-full rounded-t-lg;
+  }
+
+  .product-details {
+    @apply flex flex-row items-center justify-between p-4;
+  }
+
+  .product-content {
+    @apply grid gap-4 text-gray800;
+  }
+
+  .cart-wrapper {
+    @apply flex flex-col gap-8 p-4 border rounded-lg shadow-sm sm:flex-row;
+  }
+
+  .cart-image {
+    @apply w-full rounded-lg;
+  }
+
+  .cart-details {
+    @apply w-full;
+  }
+
+  .cart-content {
+    @apply flex flex-row justify-between text-gray800;
   }
 }
 
@@ -46,7 +106,7 @@
     @apply text-xl font-normal leading-7;
   }
 
-  .body-meduim {
+  .body-medium {
     @apply text-base font-normal leading-6;
   }
 

@@ -1,23 +1,9 @@
-<div class="p-5 mx-auto my-4 border rounded-lg border-cyan-950">
-  <p class="my-2">
-    <span>
-      Product name:
-      {{@product.name}}
-    </span>
-    <span>
-      Product price:
-      {{@product.price}}
-    </span>
-  </p>
-  <p class="my-2">
-    In Cart:
-    {{this.quantity}}
-  </p>
-  <button
-    type="button"
-    class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
-    {{on "click" this.addToCart}}
-  >
-    Add to cart
-  </button>
+<div class="{{if @isOnCart 'cart-wrapper' 'product-wrapper'}}">
+  <Product::Image @src={{@product}} @isOnCart={{@isOnCart}} />
+  <Product::Details
+    @product={{@product}}
+    @addToCart={{this.addToCart}}
+    @removeFromCart={{this.removeFromCart}}
+    @isOnCart={{@isOnCart}}
+  />
 </div>

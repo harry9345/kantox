@@ -1,0 +1,28 @@
+<div class="bread-crumbs">
+  {{#if @toRoute}}
+    <LinkTo
+      @route={{@toRoute}}
+      class="inline-flex items-center cursor-pointer link-to"
+    >
+      <SvgIcon @name="arrow-left" @class="w-6 h-6" />
+      <span class="p-2 body-medium text-gray800">
+        {{@linkTitle}}
+      </span>
+    </LinkTo>
+  {{else}}
+    {{#each @breadCrumbs as |crumb|}}
+      <span class="p-2 body-medium text-gray800 active-bread-crumbs">
+        {{crumb}}
+      </span>
+    {{/each}}
+  {{/if}}
+</div>
+<div class="mt-4 mb-8 title-wrapper">
+  <h1 class="title-large text-gray800">
+    {{@pageTitle}}
+  </h1>
+  <p class="mt-2 body-large">
+    {{@pageSubtitle}}
+  </p>
+</div>
+{{yield}}

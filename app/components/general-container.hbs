@@ -1,0 +1,27 @@
+<nav class="nav">
+  <div class="">
+    <LinkTo @route="products" class="cursor-pointer">
+      <img src={{'/assets/specialfx.png'}} alt="specialfx" class="logo" />
+    </LinkTo>
+  </div>
+  <div class="p-2 rounded-lg shadow-md bg-gray50">
+    <LinkTo @route="cart" class="cursor-pointer">
+      {{#if this.cart.listItem.length}}
+        <SvgIcon
+          @name="cart-violet"
+          @class="flex items-center w-auto h-6 gap-2 cursor-pointer text-violet700"
+          @quantity={{this.itemsCount}}
+          @totalPayable={{@totalPayable}}
+        />
+      {{else}}
+        <SvgIcon
+          @name="cart"
+          @class="flex items-center w-auto h-6 cursor-pointer"
+        />
+      {{/if}}
+    </LinkTo>
+  </div>
+</nav>
+<div class="container-wrapper">
+  {{yield}}
+</div>

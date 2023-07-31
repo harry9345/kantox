@@ -1,4 +1,12 @@
-{{page-title "Products"}}
-{{#each this.model as |product|}}
-  <Product @product={{product}} />
-{{/each}}
+<GeneralContainer>
+  <BreadCrumbs
+    @pageTitle="Groceries"
+    @pageSubtitle="Special FX offers only the finest organic produce."
+    @breadCrumbs={{array 'Groceries' 'Wine' 'Clothes' 'FX'}}
+  />
+  <div class="flex flex-col justify-between lg:flex-row gap-14">
+    {{#each this.model as |product|}}
+      <Product @product={{product}} />
+    {{/each}}
+  </div>
+</GeneralContainer>

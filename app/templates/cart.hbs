@@ -1,2 +1,89 @@
-{{page-title "Cart"}}
-{{outlet}}
+<GeneralContainer @totalPayable={{currency this.totalPayable}}>
+  <BreadCrumbs
+    @toRoute="products"
+    @linkTitle="Continue shopping"
+    @pageTitle="Shopping Cart"
+    @pageSubtitle="You have {{this.totalQuantity}} items in your cart."
+  />
+  <div class="container-summary">
+    <ul class="item-summary">
+      {{#each this.cart.listItem as |item|}}
+        <li>
+          <Product @product={{item}} @isOnCart={{true}} />
+        </li>
+      {{/each}}
+    </ul>
+    <div class="total-summary">
+      <div class="px-8 py-4 bg-gray100">
+        <h3 class="title-medium text-gray800">
+          Summary
+        </h3>
+      </div>
+      <div class="flex flex-row p-8 border-b-2 border-gray100">
+        <div {{on 'click' this.toggleDetails}}>
+          <SvgIcon
+            @name="{{if this.isDetailsVisible 'arrow-down' 'arrow-right'}}"
+            @class="flex items-start w-6 h-auto cursor-pointer"
+          />
+        </div>
+        <div class="grid w-full -mt-1 gap-y-4 body-medium text-gray800">
+          <div class="flex justify-between gap-2">
+            <span>
+              subtotal
+            </span>
+            <span class="font-bold">
+              {{currency this.subtotal}}
+            </span>
+          </div>
+          {{#if this.isDetailsVisible}}
+            {{#each this.calculatedPrices as |calculatedPrice|}}
+              <li class="flex justify-between gap-2">
+                <span>
+                  {{calculatedPrice.quantity}}
+                  x
+                  {{calculatedPrice.name}}
+                </span>
+                <span>
+                  {{currency calculatedPrice.calculatedPrice}}
+                </span>
+              </li>
+            {{/each}}
+          {{/if}}
+          <div class="flex justify-between gap-2">
+            <p>
+              shipping cost
+            </p>
+            <span class="font-bold">
+              {{currency this.shippingCost}}
+            </span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <p>
+              discount
+            </p>
+            <span class="font-bold">
+              {{#if (gt this.discount 0)}}
+                -{{currency this.discount}}
+              {{else}}
+                {{currency 0}}
+              {{/if}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between px-8 pt-4">
+        <p class="body-large">
+          Total Payable
+        </p>
+        <span class="font-bold title-medium">
+          {{currency this.totalPayable}}
+        </span>
+      </div>
+      <div class="flex justify-end p-8">
+        <button class="font-bold text-white button bg-violet700" type="button">
+          Go to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</GeneralContainer>
