@@ -1,14 +1,13 @@
-<GeneralContainer>
+<GeneralContainer @totalPayable={{currency this.totalPayable}}>
   <BreadCrumbs
     @toRoute="products"
     @linkTitle="Continue shopping"
     @pageTitle="Shopping Cart"
-    @pageSubtitle="You have {{this.cart.listItem.length}} items in your cart."
+    @pageSubtitle="You have {{this.totalQuantity}} items in your cart."
   />
   <div class="container-summary">
     <ul class="item-summary">
       {{#each this.cart.listItem as |item|}}
-        {{! need to update the li here }}
         <li>
           <Product @product={{item}} @isOnCart={{true}} />
         </li>
@@ -21,10 +20,12 @@
         </h3>
       </div>
       <div class="flex flex-row p-8 border-b-2 border-gray100">
-        <SvgIcon
-          @name="arrow-right"
-          @class="flex items-start w-6 h-auto cursor-pointer"
-        />
+        <div {{on 'click' this.toggleDetails}}>
+          <SvgIcon
+            @name="{{if this.isDetailsVisible 'arrow-down' 'arrow-right'}}"
+            @class="flex items-start w-6 h-auto cursor-pointer"
+          />
+        </div>
         <div class="grid w-full -mt-1 gap-y-4 body-medium text-gray800">
           <div class="flex justify-between gap-2">
             <span>
@@ -34,12 +35,26 @@
               {{currency this.subtotal}}
             </span>
           </div>
+          {{#if this.isDetailsVisible}}
+            {{#each this.calculatedPrices as |calculatedPrice|}}
+              <li class="flex justify-between gap-2">
+                <span>
+                  {{calculatedPrice.quantity}}
+                  x
+                  {{calculatedPrice.name}}
+                </span>
+                <span>
+                  {{currency calculatedPrice.calculatedPrice}}
+                </span>
+              </li>
+            {{/each}}
+          {{/if}}
           <div class="flex justify-between gap-2">
             <p>
               shipping cost
             </p>
             <span class="font-bold">
-              {{!-- {{currency this.subtotal}} --}}
+              {{currency this.shippingCost}}
             </span>
           </div>
           <div class="flex justify-between gap-2">
@@ -47,7 +62,11 @@
               discount
             </p>
             <span class="font-bold">
-              {{!-- {{currency this.subtotal}} --}}
+              {{#if (gt this.discount 0)}}
+                -{{currency this.discount}}
+              {{else}}
+                {{currency 0}}
+              {{/if}}
             </span>
           </div>
         </div>
@@ -57,7 +76,7 @@
           Total Payable
         </p>
         <span class="font-bold title-medium">
-          £19.34
+          {{currency this.totalPayable}}
         </span>
       </div>
       <div class="flex justify-end p-8">

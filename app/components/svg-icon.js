@@ -1,7 +1,6 @@
 import Component from "@glimmer/component";
 
 export default class SvgIconComponent extends Component {
-
   constructor() {
     super(...arguments);
     this.loadSvg();

@@ -3,6 +3,9 @@
 module.exports = {
   content: ["./app/**/*.{gjs,gts,hbs,html,js,ts}"],
   theme: {
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+    },
     extend: {
       colors: {
         white: "#FFFFFF",
@@ -27,7 +30,7 @@ module.exports = {
     },
     screens: {
       sm: "640px",
-      md: "768px",
+      md: "850px",
       lg: "1024px",
       xl: "1280px",
     },

@@ -7,4 +7,5 @@ export default class ProductModel extends Model {
   @attr("string") src;
   @attr("number") quantity;
   @attr("string") discount;
+  @attr("number") discountedPrice;
 }
