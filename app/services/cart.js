@@ -17,6 +17,7 @@ export default class CartService extends Service {
       }
       isItemExist.discountedPrice = this.calculateDiscount(isItemExist);
     } else {
+      /* eslint-disable no-prototype-builtins */
       if (!item.hasOwnProperty("quantity")) {
         if (item.code === "GR1") {
           item.quantity = 2;

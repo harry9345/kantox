@@ -24,12 +24,16 @@
         </h3>
       </div>
       <div class="flex flex-row p-8 border-b-2 border-gray100">
-        <div {{on 'click' this.toggleDetails}}>
+        <button
+          type="button"
+          class="mr-4  flex items-start {{if this.isDetailsVisible 'mt-2'}}"
+          {{on 'click' this.toggleDetails}}
+        >
           <SvgIcon
             @name="{{if this.isDetailsVisible 'arrow-down' 'arrow-right'}}"
-            @class="flex items-start w-6 h-auto cursor-pointer mr-4 {{if this.isDetailsVisible 'mt-2'}}"
+            @class="w-6 h-auto cursor-pointer"
           />
-        </div>
+        </button>
         <div class="grid w-full -mt-1 gap-y-4 body-medium text-gray800">
           <div class="flex justify-between gap-2">
             <span>
