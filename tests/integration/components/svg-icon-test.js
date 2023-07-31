@@ -7,20 +7,11 @@ module("Integration | Component | svg-icon", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-    // Set any properties with this.set("myProperty", "value");
-    // Handle any actions with this.set("myAction", function(val) { ... });
+    const imageSrc = '/assets/cart.svg';
+    this.set('imageSrc', imageSrc);
 
-    await render(hbs`<SvgIcon />`);
+    await render(hbs`<SvgIcon @name="cart" />`);
 
-    assert.dom(this.element).hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <SvgIcon>
-        template block text
-      </SvgIcon>
-    `);
-
-    assert.dom(this.element).hasText("template block text");
+    assert.dom('[data-test-img]').hasAttribute('src', imageSrc);
   });
 });

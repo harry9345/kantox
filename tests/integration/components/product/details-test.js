@@ -7,20 +7,28 @@ module("Integration | Component | product/details", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Product::Details />`);
+    const item2 = {
+      name: " testing Strawberries",
+      price: 5,
+      quantity: 1,
+      discount: "3 for £13.5",
+    };
 
-    assert.dom(this.element).hasText("");
+    this.set("product", item2)
+    this.set("addToCart", () => {});
+    this.set("removeFromCart", () => {});
 
-    // Template block usage:
-    await render(hbs`
-      <Product::Details>
-        template block text
-      </Product::Details>
-    `);
 
-    assert.dom(this.element).hasText("template block text");
+    await render(hbs`<Product::Details
+    @product={{this.product}}
+    @addToCart={{this.addToCart}}
+    @removeFromCart={{this.removeFromCart}}
+    @isOnCart={{false}}
+  />`);
+
+
+    assert.dom("[data-test-price]").hasText("£5.00");
+
   });
 });
