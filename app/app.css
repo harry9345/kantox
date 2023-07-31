@@ -1,18 +1,8 @@
 /* stylelint-disable at-rule-empty-line-before */
 /* stylelint-disable at-rule-no-unknown */
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @layer base {
-  @font-face {
-    font-family: Inter;
-    font-weight: normal;
-    font-style: normal;
-    src: url("/fonts/Inter/Inter-VariableFont.ttf") format("truetype");
-  }
-} */
 
 @layer components {
   .nav {
