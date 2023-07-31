@@ -96,8 +96,5 @@
   },
   "ember": {
     "edition": "octane"
-  },
-  "dependencies": {
-    "babel-eslint": "^10.1.0"
   }
 }
