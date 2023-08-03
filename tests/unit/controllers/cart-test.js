@@ -13,22 +13,30 @@ module("Unit | Controller | cart", function (hooks) {
       { code: "GR3", price: 20, quantity: 4, discountedPrice: 4 },
     ];
 
-    assert.equal(controller.subtotal, 120, "sum of total proices before discount");
+    assert.strictEqual(
+      controller.subtotal,
+      120,
+      "sum of total proices before discount"
+    );
 
-    assert.equal(controller.totalQuantity, 10, "sum of total quantity");
+    assert.strictEqual(controller.totalQuantity, 10, "sum of total quantity");
 
-    assert.equal(controller.discount, 38, "calculate sum of discount");
+    assert.strictEqual(controller.discount, 38, "calculate sum of discount");
 
-    assert.equal(controller.totalPayable, 82, "discount - subtotal");
+    assert.strictEqual(controller.totalPayable, 82, "discount - subtotal");
 
-    assert.equal(controller.isDetailsVisible, false, "summary detail initial state");
-
+    assert.false(controller.isDetailsVisible, "summary detail initial state");
 
     controller.send("toggleDetails");
-    assert.equal(controller.isDetailsVisible, true, "summary detail after first onclick");
-
+    assert.true(
+      controller.isDetailsVisible,
+      "summary detail after first onclick"
+    );
 
     controller.send("toggleDetails");
-    assert.equal(controller.isDetailsVisible, false, "summary detail after closing the iscon");
+    assert.false(
+      controller.isDetailsVisible,
+      "summary detail after closing the iscon"
+    );
   });
 });

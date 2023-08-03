@@ -10,9 +10,8 @@ module("Unit | Service | cart", function (hooks) {
   });
 
   test("Test cart service ", function (assert) {
-    const service = this.owner.lookup("service:cart")
-    assert.equal(service.listItem.length, 0, "List Item is eampty")
-
+    const service = this.owner.lookup("service:cart");
+    assert.strictEqual(service.listItem.length, 0, "List Item is eampty");
 
     const item1 = {
       name: "Green Tea",
@@ -22,7 +21,7 @@ module("Unit | Service | cart", function (hooks) {
       discountedPrice: 0,
     };
     service.addItem(item1);
-    assert.equal(service.listItem.length, 1, "First item has been added");
+    assert.strictEqual(service.listItem.length, 1, "First item has been added");
 
     const item2 = {
       name: "Strawberries",
@@ -32,10 +31,13 @@ module("Unit | Service | cart", function (hooks) {
       discountedPrice: 0,
     };
     service.addItem(item2);
-    assert.equal(service.listItem.length, 2, "Another item has been added");
+    assert.strictEqual(
+      service.listItem.length,
+      2,
+      "Another item has been added"
+    );
 
-    service.removeItem(item2)
-    assert.equal(service.listItem.length, 1, "1 item has been removed")
-
+    service.removeItem(item2);
+    assert.strictEqual(service.listItem.length, 1, "1 item has been removed");
   });
 });

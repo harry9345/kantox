@@ -9,6 +9,6 @@ module("Integration | Component | bread-crumbs", function (hooks) {
   test("it renders", async function (assert) {
     await render(hbs`<BreadCrumbs @pageTitle="Groceries"/>`);
 
-    assert.dom('[data-test-bread-crumbs-title]').hasText("Groceries");
+    assert.dom("[data-test-bread-crumbs-title]").hasText("Groceries");
   });
 });
