@@ -11,14 +11,3 @@ Router.map(function () {
   this.route("not-found", { path: "/*path" });
   this.route("cart", { path: "shopping-cart" });
 });
-
-Router.reopen({
-  location: "auto",
-  rootURL: "/",
-  didTransition() {
-    if (this.url === "/") {
-      this.transitionTo("products");
-    }
-    return true;
-  },
-});
