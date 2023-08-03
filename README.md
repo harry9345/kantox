@@ -1,9 +1,4 @@
-# Frontend Tech Test
-
-## Objectives
-- Evaluation of programming style
-- Evaluation of language knowledge
-- Evaluation of testing approach
+# Frontend Tech Test solution
 
 ## Deadline
 - Assignment should be ready within 5 natural days of inbox reception
