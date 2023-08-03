@@ -7,7 +7,6 @@ module("Integration | Component | product/details", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-
     const item2 = {
       name: " testing Strawberries",
       price: 5,
@@ -15,10 +14,9 @@ module("Integration | Component | product/details", function (hooks) {
       discount: "3 for £13.5",
     };
 
-    this.set("product", item2)
+    this.set("product", item2);
     this.set("addToCart", () => {});
     this.set("removeFromCart", () => {});
-
 
     await render(hbs`<Product::Details
     @product={{this.product}}
@@ -27,8 +25,6 @@ module("Integration | Component | product/details", function (hooks) {
     @isOnCart={{false}}
   />`);
 
-
     assert.dom("[data-test-price]").hasText("£5.00");
-
   });
 });

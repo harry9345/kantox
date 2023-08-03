@@ -7,8 +7,7 @@ module("Integration | Component | general-container", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-
     await render(hbs`<GeneralContainer />`);
-    assert.dom('[data-test-app-logo]').exists();
+    assert.dom("[data-test-app-logo]").exists();
   });
 });

@@ -5,8 +5,8 @@
     @pageTitle="Shopping Cart"
     @pageSubtitle={{if
       (gt this.totalQuantity 0)
-      (concat 'You have ' this.totalQuantity ' items in your cart.')
-      'Please add item to your cart'
+      (concat "You have " this.totalQuantity " items in your cart.")
+      "Please add item to your cart"
     }}
   />
   <div class="container-summary">
@@ -26,11 +26,11 @@
       <div class="flex flex-row p-8 border-b-2 border-gray100">
         <button
           type="button"
-          class="mr-4  flex items-start {{if this.isDetailsVisible 'mt-2'}}"
-          {{on 'click' this.toggleDetails}}
+          class="mr-4 flex items-start {{if this.isDetailsVisible "mt-2"}}"
+          {{on "click" this.toggleDetails}}
         >
           <SvgIcon
-            @name="{{if this.isDetailsVisible 'arrow-down' 'arrow-right'}}"
+            @name="{{if this.isDetailsVisible "arrow-down" "arrow-right"}}"
             @class="w-6 h-auto cursor-pointer"
           />
         </button>

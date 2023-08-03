@@ -20,13 +20,16 @@ module("Unit | Model | product", function (hooks) {
 
     let model = store.createRecord("product", greanTea);
 
-    assert.equal(model.name, "Grean Tea", "item name is Grean Tea");
-    assert.equal(model.price, 5, "each tea cost 5");
-    assert.equal(model.code, "GR1", " item code is correct");
-    assert.equal(model.src, "/assets/green-tea.png", "grean tea image src is correct");
-    assert.equal(model.quantity, 0, "no orders yet");
-    assert.equal(model.discount, "buy 3 get 1 free", "its a good deal");
-    assert.equal(model.discountedPrice, 3, "good discount fo reach item");
+    assert.strictEqual(model.name, "Grean Tea", "item name is Grean Tea");
+    assert.strictEqual(model.price, 5, "each tea cost 5");
+    assert.strictEqual(model.code, "GR1", " item code is correct");
+    assert.strictEqual(
+      model.src,
+      "/assets/green-tea.png",
+      "grean tea image src is correct"
+    );
+    assert.strictEqual(model.quantity, 0, "no orders yet");
+    assert.strictEqual(model.discount, "buy 3 get 1 free", "its a good deal");
+    assert.strictEqual(model.discountedPrice, 3, "good discount fo reach item");
   });
-
 });

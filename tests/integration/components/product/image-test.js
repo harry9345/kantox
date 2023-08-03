@@ -14,9 +14,11 @@ module("Integration | Component | product/image", function (hooks) {
       discount: "3 for £13.5",
     };
 
-    this.set("product", item2)
+    this.set("product", item2);
 
-    await render(hbs`<Product::Image   @src={{this.product}}  @isOnCart={{false}} />`);
+    await render(
+      hbs`<Product::Image   @src={{this.product}}  @isOnCart={{false}} />`
+    );
 
     assert.dom("[data-test-discount-info]").hasText("3 for £13.5");
   });

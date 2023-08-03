@@ -7,7 +7,6 @@ module("Integration | Helper | currency", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders", async function (assert) {
-
     this.set("inputValue", "1234");
 
     await render(hbs`{{currency this.inputValue}}`);
