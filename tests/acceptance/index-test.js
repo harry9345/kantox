@@ -6,8 +6,8 @@ module("Acceptance | products", function (hooks) {
   setupApplicationTest(hooks);
 
   test("We should be able to add items to cart", async function (assert) {
-    await visit("/");
+    await visit("/index");
 
-    assert.strictEqual(currentURL(), "/");
+    assert.strictEqual(currentURL(), "/index");
   });
 });
