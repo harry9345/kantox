@@ -8,9 +8,9 @@ module("Unit | Controller | cart", function (hooks) {
     let controller = this.owner.lookup("controller:cart");
 
     controller.cart.listItem = [
-      { code: "GR1", price: 10, quantity: 2, discountedPrice: 5 },
-      { code: "GR2", price: 5, quantity: 4, discountedPrice: 4 },
-      { code: "GR3", price: 20, quantity: 4, discountedPrice: 4 },
+      { code: "GR1", price: 10, quantity: 2, discountedFigure: 5 },
+      { code: "GR2", price: 5, quantity: 4, discountedFigure: 4 },
+      { code: "GR3", price: 20, quantity: 4, discountedFigure: 4 },
     ];
 
     assert.strictEqual(

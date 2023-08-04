@@ -15,7 +15,7 @@ export default class CartService extends Service {
       } else {
         isItemExist.quantity++;
       }
-      isItemExist.discountedPrice = this.calculateDiscount(isItemExist);
+      isItemExist.discountedFigure = this.calculateDiscount(isItemExist);
     } else {
       /* eslint-disable no-prototype-builtins */
       if (!item.hasOwnProperty("quantity")) {
@@ -24,7 +24,7 @@ export default class CartService extends Service {
         } else {
           item.quantity = 1;
         }
-        item.discountedPrice = this.calculateDiscount(item);
+        item.discountedFigure = this.calculateDiscount(item);
       }
       this.listItem = [...this.listItem, item];
     }
@@ -37,7 +37,7 @@ export default class CartService extends Service {
     if (itemToRemove) {
       if (itemToRemove.quantity > 1) {
         itemToRemove.quantity--;
-        itemToRemove.discountedPrice = this.calculateDiscount(itemToRemove);
+        itemToRemove.discountedFigure = this.calculateDiscount(itemToRemove);
       } else {
         itemToRemove.quantity = 0;
         this.listItem = this.listItem.filter(

@@ -16,7 +16,7 @@ export default function () {
             src: "/assets/green-tea.png",
             discount: "2 for 1",
             quantity: 0,
-            discountedPrice: 0,
+            discountedFigure: 0,
           },
         },
         {
@@ -29,7 +29,7 @@ export default function () {
             src: "/assets/strawberries.png",
             discount: "3 for £13.50",
             quantity: 0,
-            discountedPrice: 0,
+            discountedFigure: 0,
           },
         },
         {
@@ -42,7 +42,7 @@ export default function () {
             src: "/assets/coffee.png",
             discount: "Multi-buy Discount",
             quantity: 0,
-            discountedPrice: 0,
+            discountedFigure: 0,
           },
         },
       ],

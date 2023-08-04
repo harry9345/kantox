@@ -25,10 +25,10 @@ export default class CartController extends Controller {
         return (
           discount +
           item.price * item.quantity -
-          item.discountedPrice * item.price
+          item.discountedFigure * item.price
         );
       } else if (item.quantity >= 3) {
-        return discount + (item.price - item.discountedPrice) * item.quantity;
+        return discount + (item.price - item.discountedFigure) * item.quantity;
       }
       return discount;
     }, 0);
