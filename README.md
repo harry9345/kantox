@@ -1,49 +1,51 @@
 # Frontend Tech Test
 
 ## Routing : 
-- Main page => index.js which show the avaible products
+- Main page => index.js which show the available products
 - Shopping-cart => to see what we have on our cart
-- Not-found page => in case landing on random page
+- Not-found page => in case landing on a random page
 
-## My overal understanding:
+## My overall understanding:
 
-- After landing on a page, ember looks for corespanding route in router.js and with the help of /route/file.js and controller/file.js it will render its template/file.hbs for the user.
-- The difference between route/file.js and its cotroller is that the route/file.js is passing the model(data) to its template but the controller/file.js will pass props and action(functions) to template/file.hbs, beside that, the controler can access to the model from route/file.js as well.
+- After landing on a page, ember looks for the corresponding route in router.js, and with the help of /route/file.js and controller/file.js it will render its template/file.hbs for the user.
+- The difference between route/file.js and its controller is that the route/file.js is passing the model(data) to its template but the controller/file.js will pass props and action(functions) to the template/file.hbs, besides that, the controller can access the model from route/file.js as well.
 
-- The controller/file.js, as mention, will hold the props and actions and can pass them to its template/file.hbs, on template/file.hbs we can access those props/action with the help of hbs{{this.props}} to render value or run a function. 
-- One the things we can do on route/file.js is to fetch data
+- The controller/file.js, as mentioned, will hold the props and actions and can pass them to its template/file.hbs, on template/file.hbs we can access those props/actions with the help of hbs{{this.props}} to render value or run a function. 
+- One of the things we can do on route/file.js is to fetch data
 
-- The "this" is pointing to the the controller or current route.
-- Passing data to template can be faster from controller than its route.
+- The "this" is pointing to the controller or current route.
+- Passing data to the template can be faster from the controller than its route.
 - The yield tag will render the content between the tag, similar to children in React.js
-- The outlet is used in the parent template to indicate where the children route's template should render.
+- The outlet is used in the parent template to indicate where the children's route's template should render.
 - Nested component, to keep the code more leaner and more maintainable.
 - "Tracked properties" is a decorator to track the state of a property
 - "getter" is to get the latest state of a tracked property
 - "action" is just a function in Ember that we need to use the "action" decoration, which needs to be added before the function name
-- "helper" its built-in  action by Ember, like {{on "click" this.toggleDetails}} the on is a helper, the click is the event that we want to trigger, and the action that we had define. we have many more predefine helper by Ember
- "on" to trigger an event, "concat" to concatinate, 
- "get" to get the value of a property {{ get this.product "name"}} to get name propert of this product, 
+- "helper" its built-in action by Ember, like {{on "click" this.toggleDetails}} the on is a helper, the click is the event that we want to trigger, and the action that we had define. we have many more predefine helpers by Ember
+ "on" to trigger an event, "concat" to concatenatee, 
+ "get" to get the value of a property {{ get this .product "name"}} to get the  name propert of this product, 
  "hash" to create a js object inside of a template, 
- "let" to create a temprary variable in template
+ "let" to create a temporary variable in the  template
  "if" just like normal if condition
  "unless" opposite of if 
- "each"just like for for each loop to be used in a template
-- we pass the props to child component with @props
-- custome helper(just like hook in react), we can create them by "ember g helper myHelper" it receive 2 argument(params, hash)  the second one can be optional, 
-- servise can comunicate between different component and route and also different services
+ "each "just like for each loop to be used in a template
+- we pass the props to the child component with @props
+- custom helper(just like a hook in react), we can create them by "ember g helper myHelper" It receives 2 arguments (params, hash)  the second one can be optional, 
+- service can communicate between different components and routes and also different services
 
 
-## some details about this project
-- `general-component` a reuseble HOC through out the project to show app logo, icon and other details
-- `svg-icon` to render dynamic `img`tag depending on the value it recive
-- `product` a reuseable component to show products detail with 2 cub component `product/product-details` for details of the product, `product/product-image` to show image of the product. 
-- `bread-crumbs` a navigation bar for the app.
-- Helpres/`currency` to show a curency sign and show correct amount in cent
+## Some details about this project
+- `general-component` a reusable HOC throughout the project to show the app logo, icon, and other details
+- `svg-icon` to render dynamic `img tag depending on the value it receives
+- `product` is a reusable component to show products detail with 2 cub components `product/product-details` for details of the product, and `product/product-image` to show an image of the product. 
+- `Bread-crumbs` is a navigation bar for the app.
+- Helpers/`currency` to show a currency sign and show the correct amount in cent
 - models `product` a data model
-- service `cart.js` to calculate and share value of the funcations, add/remove/ calculate the discount figure.
-- `controller/cart` to calculate the total amount/payable amount after disount/ total given discout/ and other values
+- service `cart.js` to calculate and share the value of the functions, add/remove/ calculate the discount figure.
+- `controller/cart` to calculate the total amount/payable amount after discount/ total given discount/ and other values
 - `mirage` to moch fetch data
+
+## some of the packages need to be updated to the latter version.
 
 ## Task Description
 You are the lead FE programmer for a small web shop. You are required to make a simple page where the user can add products to a cart, and the total of the cart is updated in real time.
