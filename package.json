@@ -26,14 +26,13 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.9",
-    "@babel/eslint-plugin": "^7.22.5",
     "@babel/plugin-proposal-decorators": "^7.21.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.0.1",
     "@ember/test-helpers": "^2.9.3",
-    "@embroider/compat": "^2.1.1",
-    "@embroider/core": "^2.1.1",
-    "@embroider/webpack": "^2.1.1",
+    "@embroider/compat": "^3.2.1",
+    "@embroider/core": "^3.2.1",
+    "@embroider/webpack": "^3.1.5",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "@tailwindcss/typography": "^0.5.9",
@@ -78,7 +77,11 @@
     "stylelint-prettier": "^3.0.0",
     "tailwindcss": "^3.3.2",
     "tracked-built-ins": "^3.1.1",
-    "webpack": "^5.78.0"
+    "webpack": "^5.88.2"
+  },
+  "dependencies": {
+    "@babel/eslint-plugin": "^7.22.5",
+    "ember-truth-helpers": "^3.1.1"
   },
   "prettier": {
     "singleQuote": false,
