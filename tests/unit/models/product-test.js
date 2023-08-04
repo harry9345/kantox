@@ -15,7 +15,7 @@ module("Unit | Model | product", function (hooks) {
       src: "/assets/green-tea.png",
       quantity: 0,
       discount: "buy 3 get 1 free",
-      discountedPrice: 3,
+      discountedFigure: 3,
     };
 
     let model = store.createRecord("product", greanTea);
@@ -30,6 +30,10 @@ module("Unit | Model | product", function (hooks) {
     );
     assert.strictEqual(model.quantity, 0, "no orders yet");
     assert.strictEqual(model.discount, "buy 3 get 1 free", "its a good deal");
-    assert.strictEqual(model.discountedPrice, 3, "good discount fo reach item");
+    assert.strictEqual(
+      model.discountedFigure,
+      3,
+      "good discount fo reach item"
+    );
   });
 });

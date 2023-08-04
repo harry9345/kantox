@@ -18,7 +18,7 @@ module("Unit | Service | cart", function (hooks) {
       price: 3.11,
       code: "GR1",
       quantity: 1,
-      discountedPrice: 0,
+      discountedFigure: 0,
     };
     service.addItem(item1);
     assert.strictEqual(service.listItem.length, 1, "First item has been added");
@@ -28,7 +28,7 @@ module("Unit | Service | cart", function (hooks) {
       price: 5,
       code: "SR1",
       quantity: 1,
-      discountedPrice: 0,
+      discountedFigure: 0,
     };
     service.addItem(item2);
     assert.strictEqual(
